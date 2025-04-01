@@ -4,6 +4,7 @@ terraform {
     storage_account_name = "path0053githubactions"
     container_name       = "tfstate"
     key                  = "prod.app.tfstate"
+    use_oidc             = true
   }
 
   required_version = ">= 1.3.0"
@@ -15,6 +16,9 @@ terraform {
     }
   }
 }
+
+
 provider "azurerm" {
   features {}
+  use_oidc = true
 }
